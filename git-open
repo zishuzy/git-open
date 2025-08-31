@@ -193,6 +193,8 @@ else
   remote_ref=${remote_ref//%/%25} remote_ref=${remote_ref//#/%23}
   if [[ $forge == 'gitea' ]]; then
     providerBranchRef="/src/branch/$remote_ref"
+  elif [[ $forge == 'dev' ]]; then
+    providerBranchRef="/file/list?path=&branch=refs/heads/$remote_ref"
   else
     providerBranchRef="/tree/$remote_ref"
   fi
